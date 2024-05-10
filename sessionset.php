@@ -7,6 +7,6 @@ session_start();
         <?php
         $_SESSION['name']="Sonu";
         $_SESSION['address']="Kapilvastu";
-        ?>
+        ?>        
     </body>
 </html>

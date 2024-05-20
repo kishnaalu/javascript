@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" id="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .box {
+            border: 3px solid black;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            display: flex;
+        }
+
+        .logo,
+        .nav,
+        .footer {
+            width: 100%;
+            height: 65px;
+            border: 1px solid black;
+
+        }
+
+        .header-banner {
+            border: 1px solid black;
+            height: 120px;
+        }
+
+        .sidebar-body {
+            display: flex;
+            flex-direction: row;
+            height: 300px;
+
+        }
+
+        .sidebar {
+            border: 1px solid black;
+            width: 30%;
+        }
+
+        .main-body {
+            border: 1px solid black;
+            width: 70%;
+        }
+
+        .logo,
+        .header-banner {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+        }
+
+        .nav,
+        .footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column-reverse;
+
+        }
+
+        .main-body {
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+        #dark{
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="box">
+        <div class="logo ">Logo</div>
+        <div class="nav">Navigation</div>
+        <div class="header-banner">Header Banner</div>
+        <div class="sidebar-body">
+            <div class="sidebar">Sidebar</div>
+            <div class="main-body">Main Body</div>
+        </div>
+        <div class="footer">Footer</div>
+    </div> -->
+
+    <button id="changemode">Change mode</button>
+
+    <script>
+        //const changemodebtn = document.getElementById("changemode")
+       // changemodebtn.onclick = function () {
+            //console.log(Date.now())
+            //localStorage.setItem("hello", "world")
+            //localStorage.getItem("hello")
+            //const personname = localStorage.getItem("name")
+            // if(personname === "ram"){
+            //     localStorage.setItem("name","shyam")
+            //}else{
+            //     localStorage.setItem("name","ram")
+            //}
+           // const personname = localStorage.getItem("mode")
+            //if (personname === "dark") {
+            //   localStorage.setItem("mode", "light")
+            // } else {
+            //    localStorage.setItem("mode", "dark")
+            // }
+            //personname === "dark" ? localStorage.setItem("mode", "light") : localStorage.setItem("mode", "dark")
+        //}
+        const changemodebtn = document.getElementById("changemode")
+        changemodebtn.onclick=function(){
+            const mode=localStorage.getItem("mode")
+            if(mode === "dark"){
+                document.documentElement.classList.remove("dark")
+                document.documentElement.classList.add("white")
+                localStorage.setItem("mode","light")
+            } else{
+                document.documentElement.classList.remove("light")
+                localStorage.setItem("mode","dark")
+                document.documentElement.classList.add("dark")
+            }
+        }
+
+        const changemode=document.getElementById("changemode")
+        changemode.onclick=function(){
+            const htmltag =document.getElementById("htmltag")
+            htmltag.classList.toggle("dark")
+        }
+        
+
+
+    </script>
+
+
+</body>
+
+</html>

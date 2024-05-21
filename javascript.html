@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="javascript.css">
+</head>
+
+<body>
+    <div id="box1"></div>
+    <div class="colon">:</div>
+    <div id="box2"></div>
+    <div class="colon">:</div>
+    <div id="box3"></div><br>
+    <div id="box4"></div>
+
+    <script>
+        const fruits = ["apple", "banana", "orange"]
+        console.log(fruits)
+        localStorage.setItem("fruits", fruits)
+
+        // const stringfruits= JSON.stringify(fruits)
+        // console.log(stringfruits, "this is fruit")
+
+
+        const person = ["sonu", "neeraj", "sandhya", "bidhya"]
+        const stringperson = JSON.stringify(person)
+        localStorage.setItem("person", stringperson)
+
+        const School = {
+            name: "Kalika Manavgyan",
+            loc: "Butwal"
+        }
+
+        localStorage.setItem("School", JSON.stringify(School)) // converts object into string
+        const result = localStorage.getItem("School")
+        console.log(result)
+        const data = JSON.parse(result) // converts to original form 
+        console.log(data, "This is stringfy converts to object data")
+
+        // localStorage.clear()
+
+        const box = document.getElementById("box")
+        function helloworld() {
+            const date = new Date()
+            const second = date.getSeconds()
+            const min = date.getMinutes()
+            const hrs = date.getHours()
+            let ampm
+
+            if (hrs >= 13 && hrs <= 23) {
+                ampm = "PM"
+            } else if (hrs == 24 || (hrs >= 1 && hrs < 11)) {
+                ampm = "AM"
+            }
+
+            //const ampm=date.toLocaleTimeString()
+            // box.textContent=hrs + " : " + min + " : " + second
+            //box.textContent=ampm
+            box1.textContent = hrs
+            box2.textContent = min
+            box3.textContent = second
+            box4.textContent = ampm
+
+        }
+
+
+        setInterval(helloworld, 1000)
+
+
+    </script>
+</body>
+
+</html>
